@@ -1,0 +1,110 @@
+html { 
+        background: url("images/background.png") no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+body {
+        font-family: Verdana, 'Times New Roman', Times, serif;
+        line-height: 4em;
+        text-align: center;
+        box-align: center;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        font-size: 22px;
+}
+#playAgain {
+        top: 200px;
+        text-align: center;
+        box-align: center;
+        margin-left: auto;
+        margin-right: auto;
+	background-color:#ffab23;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#f0f0f0;
+	font-family:Arial;
+	font-size:22px;
+	padding:20px 40px;
+	text-decoration:none;
+        text-shadow:0px 1px 0px #ffee66;
+        line-height: 5mm;
+}
+#playAgain:hover {
+        background-color:#ff9c66;
+}
+header {
+        display: block;
+        height: 150px;
+        color: #0000ff;
+        font-size:28px;
+}
+h1 {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        height: 220px ;
+        margin-top:0%;
+        margin-bottom: 0%;
+        font-size: 40px;
+        font-weight: bold;
+        color: #0000ff;
+        background-image: url("images/headerss.png");
+        background-repeat: repeat-x;
+        background-size: 68%;
+        background-position: center center;
+        }
+h2 {
+                font-size: 20px;
+                margin-top: 0;
+}
+#play {
+                background-color: #004A7F;
+                -webkit-border-radius: 18px;
+                border-radius: 18px;
+                border: none;
+                color: #FFFFFF;
+                cursor: pointer;
+                display: inline-block;
+                font-family: Arial;
+                font-size: 28px;
+                padding: 25px 50px;
+                text-align: center;
+                text-decoration: none;
+                animation: glowing 1500ms infinite;
+                margin: 2em
+        }
+      
+@keyframes glowing {
+        0% { background-color: #44c767; box-shadow: 0 0 3px #44c767; }
+        50% { background-color: #49e819; box-shadow: 0 0 40px #49e819; }
+        100% { background-color: #44c767; box-shadow: 0 0 3px #44c767; }
+      } 
+#answer {
+        padding:15px 10px;
+        margin: 0;
+        line-height: 1em;
+}
+
+#welcome {
+        color: #0000ff;
+        padding:40px 20px;
+        margin: 0;
+        line-height: 2em;
+}
+
+#message {
+        color: black;
+        line-height: 2em;
+}
+
+#demo{
+        font-weight: bold;
+        color: #0000ff;
+}
