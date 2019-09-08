@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kids Math Game Online - Play For Free </title>
+    <meta charset=utf-8 />
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>  
+  <header>
+    <h1>Fun Math Game For Kids</h1>
+  </header>
+  
+  <div id="welcome"></p>
+    <h2 id="welcomeMessage"> Welcome! Enter your name and start to play!</h2>
+    <input type="text" id="name" value="" required>
+    <input type="button" id="enterName" value="Enter" onClick="getName()">
+  
+  <p id="demo"></p>
+
+  <script>
+  function getName() {
+  username= document.getElementById("name").value
+  sessionStorage.setItem("name", username);
+  var x= sessionStorage.getItem("name");
+  document.getElementById("demo").innerHTML = "Welcome " + x + "! " + "Let's Play!";
+  document.getElementById("welcomeMessage").style.display = "none";
+  document.getElementById("name").style.display = "none";
+  document.getElementById("enterName").style.display = "none";
+}
+
+  window.onload = function() {
+  var x= sessionStorage.getItem("name");
+  if (x) {
+    document.getElementById("demo").innerHTML = "Welcome " + x + "! " + "Let's Play!";
+    document.getElementById("welcomeMessage").style.display = "none";
+    document.getElementById("name").style.display = "none";
+    document.getElementById("enterName").style.display = "none";
+    }
+  }
+  </script>
+
+  <p id="firstNumber"></p>
+  <p id="operator"></p>
+  <p id="secondNumber"></p>
+
+  <img src=images/firework.png id='firework1' height = "300" width ="300" style="display:none;">
+  <input type="button" id="play" value="Play" button onClick="question()">
+  <img src=images/goodjob.gif id='goodjob' height = "300" width ="300" style="display:none;">
+  <img src=images/firework.png id='firework2' height = "300" width ="300" style="display:none;">
+
+  <p id="message"></p>
+
+  <p id="answer">Answer:</p>
+  <input type="text" id="myText" value="" required>
+  <input type="button" id="try" value="Try it" onClick="play()">
+
+  <input type="button" id="playAgain" value="Play Again" onClick="replay()" style="display: none;">
+  
+  <script>
+
+    var result;
+
+    function question() {
+      var firstNumber = Math.floor(Math.random() * 10 + 1);
+      var operators = ["+", "-", "*"][Math.floor(Math.random() * 3)];
+      var secondNumber = Math.floor(Math.random() * 10 +1);
+
+      document.getElementById("firstNumber").innerHTML = firstNumber;
+      document.getElementById("firstNumber").style.display = "inline";
+      document.getElementById("operator").innerHTML = operators;
+      document.getElementById("operator").style.display = "inline";
+      document.getElementById("secondNumber").innerHTML = secondNumber;
+      document.getElementById("secondNumber").style.display = "inline";
+      document.getElementById("play").style.display = "none";
+
+      if (operators == "+") {
+        result = firstNumber + secondNumber;
+      } else if (operators == "-") {
+        result = firstNumber - secondNumber;
+      } else if (operators == "*") {
+        result = firstNumber * secondNumber;
+      } 
+    }
+
+    function play() {
+      var y = document.getElementById("myText").value;
+
+      if (y =="") {
+        alert("Please enter a number");
+      } else if (result == y) {
+        document.getElementById("playAgain").style.display = "block";
+        document.getElementById("firstNumber").style.display = "none";
+        document.getElementById("secondNumber").style.display = "none";
+        document.getElementById("operator").style.display = "none";
+        document.getElementById("message").style.display = "none";
+        document.getElementById("answer").style.display = "block";
+        document.getElementById("goodjob").style.display = "inline";
+        document.getElementById("firework1").style.display = "inline";
+        document.getElementById("firework2").style.display = "inline";
+      } else if (result !== y) {
+        document.getElementById("message").innerHTML = "Wrong answer. Good try.";
+        document.getElementById("message").style.display = "block";
+        document.getElementById("playAgain").style.display = "block"; 
+        document.getElementById("answer").style.display = "block";
+        document.getElementById("firstNumber").style.display = "none";
+        document.getElementById("secondNumber").style.display = "none";
+        document.getElementById("operator").style.display = "none";
+      }
+    }
+
+    function replay() {
+        document.getElementById("firstNumber").style.display = "none";
+        document.getElementById("secondNumber").style.display = "none";
+        document.getElementById("operator").style.display = "none";
+        document.getElementById("answer").style.display = "block";
+        document.getElementById("goodjob").style.display = "none";
+        document.getElementById("firework1").style.display = "none";
+        document.getElementById("firework2").style.display = "none";
+        document.getElementById("playAgain").style.display = "none";
+        document.getElementById("message").style.display = "none";
+      
+      question();
+    }
+
+  </script>
+
+</body>
+
+</html>
